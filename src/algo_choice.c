@@ -64,6 +64,11 @@ void	algo_choice(long int *a, t_swap *swp)
 	int	*new_a;
 
 	new_a = long_to_int(a, swp);
+	if (check_tab(new_a, swp) == 0)
+	{
+		free(new_a);
+		return ;
+	}
 	b = (int *)malloc(sizeof(int) * (swp->sizetab_a + 1));
 	if (!b)
 		return ;
